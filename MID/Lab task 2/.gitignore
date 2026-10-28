@@ -236,7 +236,7 @@ PublishScripts/
 csx/
 *.build.csdef
 
-# Microsoft Azure Emulator
+# Microsoft Azure Emulator 
 ecf/
 rcf/
 
@@ -395,9 +395,11 @@ Temporary Items
 yarn.lock
 package-lock.json
 
-=======
 # Local
 .env
+.env.*
+!.env.example
+
 dist
 .webpack
 .serverless/**/*.zip
