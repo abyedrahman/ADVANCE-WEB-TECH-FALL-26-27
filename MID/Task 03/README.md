@@ -1,6 +1,3 @@
-Name: Abyed Rahman Rokon
-ID: 23-51846-2
-SEC: E
 # Krown Dex Backend – Setup & Run Guide
 Please setup the pnpm and the node_module , use the boiler plate
 ````bash
