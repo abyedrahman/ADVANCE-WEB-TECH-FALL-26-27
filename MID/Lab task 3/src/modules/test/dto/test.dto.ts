@@ -11,8 +11,10 @@ export class CreateTestDto{
 
     @IsString()
     @IsNotEmpty()
+    
     @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/,{message:'Password must be match with the foramat'})
     password!:string;
+    
 
     @IsOptional()
     created_at?:Date=new Date()

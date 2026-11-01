@@ -1,0 +1,169 @@
+{
+  "info": {
+    "name": "Lab Task 3 - User Registration",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Test 1 - All fields valid (201)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"Rahim Ahmed\",\n  \"email\": \"rahim@gmail.com\",\n  \"password\": \"Rahim@123\",\n  \"age\": 22,\n  \"phone\": \"01712345678\",\n  \"accountType\": \"student\",\n  \"address\": \"Dhaka, Bangladesh\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Test 2 - Invalid email (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"Rahim Ahmed\",\n  \"email\": \"invalid-email\",\n  \"password\": \"Rahim@123\",\n  \"age\": 22,\n  \"phone\": \"01712345678\",\n  \"accountType\": \"student\",\n  \"address\": \"Dhaka, Bangladesh\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Test 3 - Weak password (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"Rahim Ahmed\",\n  \"email\": \"rahim@gmail.com\",\n  \"password\": \"12345\",\n  \"age\": 22,\n  \"phone\": \"01712345678\",\n  \"accountType\": \"student\",\n  \"address\": \"Dhaka, Bangladesh\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Test 4 - Age below 18 (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"Rahim Ahmed\",\n  \"email\": \"rahim@gmail.com\",\n  \"password\": \"Rahim@123\",\n  \"age\": 15,\n  \"phone\": \"01712345678\",\n  \"accountType\": \"student\",\n  \"address\": \"Dhaka, Bangladesh\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Test 5 - Unexpected isAdmin (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"Rahim Ahmed\",\n  \"email\": \"rahim@gmail.com\",\n  \"password\": \"Rahim@123\",\n  \"age\": 22,\n  \"phone\": \"01712345678\",\n  \"accountType\": \"student\",\n  \"address\": \"Dhaka, Bangladesh\",\n  \"isAdmin\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "register"
+          ]
+        }
+      }
+    }
+  ]
+}

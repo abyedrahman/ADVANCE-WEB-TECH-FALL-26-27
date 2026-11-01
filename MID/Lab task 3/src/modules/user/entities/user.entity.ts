@@ -15,6 +15,18 @@ export class User {
   password!: string;
 
   @Column()
+  age!: number;
+
+  @Column()
+  phone!: number;
+  
+  @Column()
+  accounttype!: string;
+
+  @Column()
+  address!: string;
+
+  @Column()
   created_at?: Date;
 
   @Column()

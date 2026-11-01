@@ -7,7 +7,7 @@ import global_config from "@/config/global_config";
 import { BullModule } from "@nestjs/bull";
 import { UserModule } from "./modules/user/user.module";
 import { TestModule } from "./modules/test/test.module";
-import { UserValidatorModule } from "./modules/uservalidator/uservalidator.module";
+import { CreateuserModule } from "./modules/createuser/createuser.module";
 
 @Module({
   imports: [
@@ -25,7 +25,7 @@ import { UserValidatorModule } from "./modules/uservalidator/uservalidator.modul
     }),
     UserModule,
     TestModule,
-    UserValidatorModule,
+    CreateuserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
